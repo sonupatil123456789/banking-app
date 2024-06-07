@@ -8,6 +8,7 @@ const bcrypt = require("bcryptjs");
 const bodyparse = require("body-parser");
 const cores = require("cors");
 const loginRoute = require("./routes/routes");
+const envm = require('dotenv/config')
 
 const port = 3000;
 const loginPath = "/api/v1/auth";
@@ -40,7 +41,7 @@ async function initialise() {
     });
 
     app.listen(port, () => {
-      console.log(`Server started on port ${port}`);
+      console.log(`Server started on port ${process.env.PORT}`);
     });
   } catch (error) {
     console.log(error);

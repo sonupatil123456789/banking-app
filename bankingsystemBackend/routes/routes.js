@@ -9,7 +9,7 @@ const { authenticateToken } = require("../Utils/helperFunctions")
 console.log(typeof AuthControllers)
 
 routes.post("/login" ,AuthControllers.loginController)
-routes.post("/signeup" ,AuthControllers.signeupController)
+routes.post("/signeup" ,AuthControllers.signupController)
 
 
 routes.get("/transaction",authenticateToken ,TransactionControllers.userTransaction);
